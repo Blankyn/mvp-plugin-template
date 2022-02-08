@@ -24,6 +24,14 @@ repositories {
     mavenCentral()
 }
 
+//这里是关键
+dependencies {
+//    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
+//    detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:1.18.1")
+    compileOnly(files("libs/wizard-template.jar"))
+//    compileOnly(files("libs/arms-template-plugin-0.0.6.jar"))
+}
+
 // Configure Gradle IntelliJ Plugin - read more: https://github.com/JetBrains/gradle-intellij-plugin
 intellij {
     pluginName.set(properties("pluginName"))
@@ -54,6 +62,7 @@ tasks {
         withType<JavaCompile> {
             sourceCompatibility = it
             targetCompatibility = it
+            options.encoding = "UTF-8"
         }
         withType<KotlinCompile> {
             kotlinOptions.jvmTarget = it
@@ -71,12 +80,12 @@ tasks {
 
         // Extract the <!-- Plugin description --> section from README.md and provide for the plugin's manifest
         pluginDescription.set(
-            projectDir.resolve("README.md").readText().lines().run {
+            projectDir.resolve("README_EN.md").readText().lines().run {
                 val start = "<!-- Plugin description -->"
                 val end = "<!-- Plugin description end -->"
 
                 if (!containsAll(listOf(start, end))) {
-                    throw GradleException("Plugin description section not found in README.md:\n$start ... $end")
+                    throw GradleException("Plugin description section not found in README_EN.md:\n$start ... $end")
                 }
                 subList(indexOf(start) + 1, indexOf(end))
             }.joinToString("\n").run { markdownToHTML(this) }
