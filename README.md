@@ -1,6 +1,6 @@
-### Android Studio 4.2中的模板插件基本说明
+### Android Studio 7.1.1中的模板插件基本说明
 
-## 支持最新Android Studio 北极狐版本
+## 支持最新Android Studio 大黄蜂版本
     Android Studio Bumblebee | 2021.1.1 Patch 1
     内部版本号 #AI-211.7628.21.2111.8139111, built on February 2, 2022 构建
     运行时版本: 11.0.11+9-b60-7590822 amd64
