@@ -3,30 +3,31 @@ package other.src.app_package
 import other.ArmsPluginTemplateProviderImpl
 import other.armsAnnotation
 
-fun armsComponent(isKt: Boolean, provider: ArmsPluginTemplateProviderImpl) = if (isKt) armsComponentKt(provider) else armsComponentJava(provider)
+fun armsComponent(isKt: Boolean, provider: ArmsPluginTemplateProviderImpl) =
+    if (isKt) armsComponentKt(provider) else armsComponentJava(provider)
 
 private fun armsComponentKt(provider: ArmsPluginTemplateProviderImpl) = """
 package ${provider.componentPackageName.value}
 import dagger.BindsInstance
 import dagger.Component
-import com.jess.arms.di.component.AppComponent
+import com.blankm.arms.di.component.AppComponent
 import ${provider.moudlePackageName.value}.${provider.pageName.value}Module
 import ${provider.contractPackageName.value}.${provider.pageName.value}Contract
 ${
     if (provider.needActivity.value && provider.needFragment.value)
         """
-import com.jess.arms.di.scope.ActivityScope
+import com.blankm.arms.di.scope.ActivityScope
 import ${provider.activityPackageName.value}.${provider.pageName.value}Activity
 import ${provider.fragmentPackageName.value}.${provider.pageName.value}Fragment
 """
     else if (provider.needActivity.value)
         """
-import com.jess.arms.di.scope.ActivityScope
+import com.blankm.arms.di.scope.ActivityScope
 import ${provider.activityPackageName.value}.${provider.pageName.value}Activity
 """
     else if (provider.needFragment.value)
         """
-import com.jess.arms.di.scope.FragmentScope
+import com.blankm.arms.di.scope.FragmentScope
 import ${provider.fragmentPackageName.value}.${provider.pageName.value}Fragment
 """
     else ""
@@ -42,7 +43,7 @@ ${
         "@FragmentScope"
     else ""
 }
-@Component(modules = arrayOf(${provider.pageName.value}Module::class),dependencies = arrayOf(AppComponent::class))
+@Component(modules = [${provider.pageName.value}Module::class],dependencies = [AppComponent::class])
 interface ${provider.pageName.value}Component {
 ${
     if (provider.needActivity.value && provider.needFragment.value) {
@@ -69,24 +70,24 @@ fun armsComponentJava(provider: ArmsPluginTemplateProviderImpl) = """
 package ${provider.componentPackageName.value};
 import dagger.BindsInstance;
 import dagger.Component;
-import com.jess.arms.di.component.AppComponent;
+import com.blankm.arms.di.component.AppComponent;
 import ${provider.moudlePackageName.value}.${provider.pageName.value}Module;
 import ${provider.contractPackageName.value}.${provider.pageName.value}Contract;
 ${
     if (provider.needActivity.value && provider.needFragment.value)
         """
-import com.jess.arms.di.scope.ActivityScope;
+import com.blankm.arms.di.scope.ActivityScope;
 import ${provider.activityPackageName.value}.${provider.pageName.value}Activity;
 import ${provider.fragmentPackageName.value}.${provider.pageName.value}Fragment;
 """
     else if (provider.needActivity.value)
         """
-import com.jess.arms.di.scope.ActivityScope;
+import com.blankm.arms.di.scope.ActivityScope;
 import ${provider.activityPackageName.value}.${provider.pageName.value}Activity;
 """
     else if (provider.needFragment.value)
         """
-import com.jess.arms.di.scope.FragmentScope;
+import com.blankm.arms.di.scope.FragmentScope;
 import ${provider.fragmentPackageName.value}.${provider.pageName.value}Fragment;
 """
     else ""

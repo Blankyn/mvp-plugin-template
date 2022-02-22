@@ -9,15 +9,15 @@ private fun armsModelKt(provider: ArmsPluginTemplateProviderImpl) = """
 package ${provider.modelPackageName.value}
 import android.app.Application
 import com.google.gson.Gson
-import com.jess.arms.integration.IRepositoryManager
-import com.jess.arms.mvp.BaseModel
+import com.blankm.arms.integration.IRepositoryManager
+import com.blankm.arms.mvp.BaseModel
 ${
     if (provider.needActivity.value && provider.needFragment.value)
-        "import com.jess.arms.di.scope.ActivityScope"
+        "import com.blankm.arms.di.scope.ActivityScope"
     else if (provider.needActivity.value)
-        "import com.jess.arms.di.scope.ActivityScope"
+        "import com.blankm.arms.di.scope.ActivityScope"
     else if (provider.needFragment.value)
-        "import com.jess.arms.di.scope.FragmentScope"
+        "import com.blankm.arms.di.scope.FragmentScope"
     else ""
 }
 import javax.inject.Inject
@@ -52,15 +52,15 @@ fun armsModelJava(provider: ArmsPluginTemplateProviderImpl) = """
 package ${provider.modelPackageName.value};
 import android.app.Application;
 import com.google.gson.Gson;
-import com.jess.arms.integration.IRepositoryManager;
-import com.jess.arms.mvp.BaseModel;
+import com.blankm.arms.integration.IRepositoryManager;
+import com.blankm.arms.mvp.BaseModel;
 ${
     if (provider.needActivity.value && provider.needFragment.value)
-        "import com.jess.arms.di.scope.ActivityScope;"
+        "import com.blankm.arms.di.scope.ActivityScope;"
     else if (provider.needActivity.value)
-        "import com.jess.arms.di.scope.ActivityScope;"
+        "import com.blankm.arms.di.scope.ActivityScope;"
     else if (provider.needFragment.value)
-        "import com.jess.arms.di.scope.FragmentScope;"
+        "import com.blankm.arms.di.scope.FragmentScope;"
     else ""
 }
 import javax.inject.Inject;

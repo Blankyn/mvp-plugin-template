@@ -18,11 +18,11 @@ private fun armsModuleKt(provider: ArmsPluginTemplateProviderImpl): String {
 package ${provider.moudlePackageName.value}
 ${
         if (provider.needActivity.value && provider.needFragment.value)
-            "import com.jess.arms.di.scope.ActivityScope"
+            "import com.blankm.arms.di.scope.ActivityScope"
         else if (provider.needActivity.value)
-            "import com.jess.arms.di.scope.ActivityScope"
+            "import com.blankm.arms.di.scope.ActivityScope"
         else if (provider.needFragment.value)
-            "import com.jess.arms.di.scope.FragmentScope"
+            "import com.blankm.arms.di.scope.FragmentScope"
         else ""
     }
 import dagger.Module
@@ -54,11 +54,11 @@ fun armsModuleJava(provider: ArmsPluginTemplateProviderImpl): String {
 package ${provider.moudlePackageName.value};
 ${
         if (provider.needActivity.value && provider.needFragment.value)
-            "import com.jess.arms.di.scope.ActivityScope;"
+            "import com.blankm.arms.di.scope.ActivityScope;"
         else if (provider.needActivity.value)
-            "import com.jess.arms.di.scope.ActivityScope;"
+            "import com.blankm.arms.di.scope.ActivityScope;"
         else if (provider.needFragment.value)
-            "import com.jess.arms.di.scope.FragmentScope;"
+            "import com.blankm.arms.di.scope.FragmentScope;"
         else ""
     }
 import dagger.Binds;

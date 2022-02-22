@@ -18,8 +18,8 @@ ${
         else -> ""
     }
 }
-import com.jess.arms.mvp.IView
-import com.jess.arms.mvp.IModel
+import com.blankm.arms.mvp.IView
+import com.blankm.arms.mvp.IModel
 
 $armsAnnotation
 interface ${provider.pageName.value}Contract {
@@ -60,8 +60,8 @@ ${
         else -> ""
     }
 }
-import com.jess.arms.mvp.IView;
-import com.jess.arms.mvp.IModel;
+import com.blankm.arms.mvp.IView;
+import com.blankm.arms.mvp.IModel;
 
 $armsAnnotation
 public interface ${provider.pageName.value}Contract {

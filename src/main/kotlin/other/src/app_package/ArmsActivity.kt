@@ -10,14 +10,13 @@ private fun armsActivityKt(provider: ArmsPluginTemplateProviderImpl) = """
 package ${provider.activityPackageName.value}
 import android.app.Activity
 import android.os.Bundle
-import com.jess.arms.base.BaseActivity
-import com.jess.arms.di.component.AppComponent
+import com.blankm.arms.base.BaseActivity
+import com.blankm.arms.di.component.AppComponent
 import ${provider.componentPackageName.value}.Dagger${provider.pageName.value}Component
 import ${provider.moudlePackageName.value}.${provider.pageName.value}Module
 import ${provider.contractPackageName.value}.${provider.pageName.value}Contract
 import ${provider.presenterPackageName.value}.${provider.pageName.value}Presenter
 import ${provider.appPackageName.value}.R
-import kotlinx.android.synthetic.main.base_title.*
 
 ${commonAnnotation(provider)}
 class ${provider.pageName.value}Activity : BaseActivity<${provider.pageName.value}Presenter>() , ${provider.pageName.value}Contract.View {
@@ -54,8 +53,8 @@ import android.app.Activity;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import android.os.Bundle;
-import com.jess.arms.base.BaseActivity;
-import com.jess.arms.di.component.AppComponent;
+import com.blankm.arms.base.BaseActivity;
+import com.blankm.arms.di.component.AppComponent;
 import ${provider.componentPackageName.value}.Dagger${provider.pageName.value}Component;
 import ${provider.moudlePackageName.value}.${provider.pageName.value}Module;
 import ${provider.contractPackageName.value}.${provider.pageName.value}Contract;

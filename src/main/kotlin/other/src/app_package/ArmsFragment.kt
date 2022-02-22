@@ -12,14 +12,13 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.jess.arms.base.BaseFragment
-import com.jess.arms.di.component.AppComponent
+import com.blankm.arms.base.BaseFragment
+import com.blankm.arms.di.component.AppComponent
 import ${provider.componentPackageName.value}.Dagger${provider.pageName.value}Component
 import ${provider.moudlePackageName.value}.${provider.pageName.value}Module
 import ${provider.contractPackageName.value}.${provider.pageName.value}Contract
 import ${provider.presenterPackageName.value}.${provider.pageName.value}Presenter
 import ${provider.appPackageName.value}.R
-import kotlinx.android.synthetic.main.base_title.*
 
 ${commonAnnotation(provider)}
 class ${provider.pageName.value}Fragment : BaseFragment<${provider.pageName.value}Presenter>() , ${provider.pageName.value}Contract.View{
@@ -102,8 +101,8 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import com.jess.arms.base.BaseFragment;
-import com.jess.arms.di.component.AppComponent;
+import com.blankm.arms.base.BaseFragment;
+import com.blankm.arms.di.component.AppComponent;
 import ${provider.componentPackageName.value}.Dagger${provider.pageName.value}Component;
 import ${provider.moudlePackageName.value}.${provider.pageName.value}Module;
 import ${provider.contractPackageName.value}.${provider.pageName.value}Contract;

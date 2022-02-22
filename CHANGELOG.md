@@ -3,8 +3,12 @@
 # mvp-plugin-template Changelog
 
 ## [Unreleased]
+### Release 0.0.7
+- 2022.02.22
+- 优化项目结构
+- 移除废弃类
 ### Release 0.0.6
-- 2022.02.28
+- 2022.02.08
 - 兼容Android Studio Bumblebee
 ### Release 0.0.5
 - 2022.01.24

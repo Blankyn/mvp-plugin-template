@@ -10,15 +10,14 @@ package ${provider.presenterPackageName.value}
 import android.app.Application
 ${
     if (provider.needActivity.value && provider.needFragment.value)
-        "import com.jess.arms.di.scope.ActivityScope"
+        "import com.blankm.arms.di.scope.ActivityScope"
     else if (provider.needActivity.value)
-        "import com.jess.arms.di.scope.ActivityScope"
+        "import com.blankm.arms.di.scope.ActivityScope"
     else if (provider.needFragment.value)
-        "import com.jess.arms.di.scope.FragmentScope"
+        "import com.blankm.arms.di.scope.FragmentScope"
     else ""
 }
-import com.jess.arms.mvp.BasePresenter
-import com.jess.arms.http.imageloader.ImageLoader
+import com.blankm.arms.mvp.BasePresenter
 import me.blankm.rxerrorhandler.core.RxErrorHandler
 import javax.inject.Inject
 import ${provider.contractPackageName.value}.${provider.pageName.value}Contract
@@ -41,8 +40,7 @@ BasePresenter<${provider.pageName.value}Contract.Model, ${provider.pageName.valu
     lateinit var mErrorHandler: RxErrorHandler
     @Inject
     lateinit var mApplication: Application
-    @Inject
-    lateinit var mImageLoader: ImageLoader
+    
     override fun onDestroy() {
           super.onDestroy()
     }
@@ -55,15 +53,14 @@ package ${provider.presenterPackageName.value};
 import android.app.Application;
 ${
     if (provider.needActivity.value && provider.needFragment.value)
-        "import com.jess.arms.di.scope.ActivityScope;"
+        "import com.blankm.arms.di.scope.ActivityScope;"
     else if (provider.needActivity.value)
-        "import com.jess.arms.di.scope.ActivityScope;"
+        "import com.blankm.arms.di.scope.ActivityScope;"
     else if (provider.needFragment.value)
-        "import com.jess.arms.di.scope.FragmentScope;"
+        "import com.blankm.arms.di.scope.FragmentScope;"
     else ""
 }
-import com.jess.arms.mvp.BasePresenter;
-import com.jess.arms.http.imageloader.ImageLoader;
+import com.blankm.arms.mvp.BasePresenter;
 import me.blankm.rxerrorhandler.core.RxErrorHandler;
 import javax.inject.Inject;
 import ${provider.contractPackageName.value}.${provider.pageName.value}Contract;
@@ -83,8 +80,7 @@ public class ${provider.pageName.value}Presenter extends BasePresenter<${provide
     RxErrorHandler mErrorHandler;
     @Inject
     Application mApplication;
-    @Inject
-    ImageLoader mImageLoader;
+  
     
     @Inject
     public ${provider.pageName.value}Presenter (${provider.pageName.value}Contract.Model model, ${provider.pageName.value}Contract.View rootView) {
@@ -95,7 +91,6 @@ public class ${provider.pageName.value}Presenter extends BasePresenter<${provide
     public void onDestroy() {
         super.onDestroy();
         this.mErrorHandler = null;
-        this.mImageLoader = null;
         this.mApplication = null;
     }
 }   
